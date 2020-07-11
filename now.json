@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "name": "pushme",
+    "env": {
+        "MONGODB_URI": "@mongodb-uri-pushme",
+        "VAPID_PRIV": "@vapid-private-key"
+    },
+    "regions": ["bru1"],
+    "github": { "silent": true }
+}
