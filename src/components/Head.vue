@@ -10,7 +10,8 @@
         </h2>
         <div id="nav">
           <router-link class="has-text-light" to="/">Home</router-link> |
-          <router-link class="has-text-light" to="/about">About</router-link>
+          <router-link class="has-text-light" to="/about">About</router-link> |
+          <a class="has-text-light" href="https://github.com/Bartvelp/pushme" target="_blank" rel="noopener noreferrer">Github Source</a>
         </div>
       </div>
     </div>
