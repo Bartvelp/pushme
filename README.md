@@ -3,7 +3,8 @@
 Send easy push notifications with a single HTTP post request, see the website for my implementation hosted on Vercel.
 
 You a free to copy this for non-commerical use. You do need to generate your own VAPID key pair and have a Mongo DB server.
-## Project setup
+Install the now-cli and setup the secrets in now.json
+## Project setup for Vue
 ```
 yarn install
 ```
