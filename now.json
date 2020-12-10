@@ -3,7 +3,8 @@
     "name": "pushme",
     "env": {
         "MONGODB_URI": "@mongodb-uri-pushme",
-        "VAPID_PRIV": "@vapid-private-key"
+        "VAPID_PRIV": "@vapid-private-key",
+        "LOG_SERVER": "@pushme-logserver"
     },
     "regions": ["bru1"],
     "github": { "silent": true }

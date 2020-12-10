@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 const connectMongo = require('./connectMongo')
+const fetch = require('node-fetch')
+
 const user = new mongoose.Schema({
   code: String,
   subscription: Object
@@ -13,6 +15,7 @@ module.exports = async (req, res) => {
   const code = Math.random().toString(36).substring(2)
   const presentCode = await saveSubscription(code, req.body)
   console.log('Saved user:', presentCode)
+  await fetch(process.env.LOG_SERVER + `?newSubscription=${presentCode}`).catch(e => null)
   res.json({
     success: true,
     code: presentCode

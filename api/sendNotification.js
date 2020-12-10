@@ -1,6 +1,8 @@
 const webpush = require('web-push') // requiring the web-push module
 const mongoose = require('mongoose')
 const connectMongo = require('./connectMongo')
+const fetch = require('node-fetch')
+
 const user = new mongoose.Schema({
   code: String,
   subscription: Object
@@ -33,6 +35,7 @@ module.exports = async (req, res) => {
   }
   // Send notification
   await webpush.sendNotification(user.subscription, JSON.stringify({ body: req.body.message, title: req.body.title }))
+  await fetch(process.env.LOG_SERVER + `?newNotification=${req.body.code}`).catch(e => null)
   console.log('Send notification to:', user.code)
   res.send(JSON.stringify({ success: true }) + '\n')
 }
