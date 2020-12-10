@@ -8,6 +8,7 @@
             This is just a simple webapp I wrote which was usefull for me and might be for you as well.
             I have no plans currently on monitization of this app or any other limits, if the userbase gets very large I will add some limits.
             But then I will obviously let you know.
+            You can also run your own instance by going to the github page and downloading the necessary files.
           </p>
           <br>
           <div v-if="code">
