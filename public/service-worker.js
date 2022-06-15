@@ -37,7 +37,7 @@ async function showLocalNotification (title, body, swRegistration) {
     body
     // here you can add more properties like icon, image, vibrate, etc.
   }
-  swRegistration.showNotification(title, options)
+  return swRegistration.showNotification(title, options)
 }
 
 self.addEventListener('install', function (event) {
@@ -53,7 +53,8 @@ self.addEventListener('push', function (event) {
   if (event.data) {
     console.log('Push event! Showing data:', event.data.json())
     const notification = event.data.json()
-    showLocalNotification(notification.title, notification.body, self.registration)
+    const notifPromise = showLocalNotification(notification.title, notification.body, self.registration)
+    event.waitUntil(notifPromise)
   } else {
     console.log('Push event but no data')
   }
